@@ -7,5 +7,5 @@ pip install -r requirements.txt
 
 # Crontab
 ```
-* * * * * crizin python /home/crizin/rasberrypi/monitor.py > /dev/null 2>&1
+* * * * * crizin python /home/crizin/raspberrypi/monitor.py > /dev/null 2>&1
 ```
