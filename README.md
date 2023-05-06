@@ -1,6 +1,7 @@
 # Setup
 
 ```shell
+git clone https://github.com/crizin/raspberrypi.git
 pip install -r requirements.txt
 ```
 
