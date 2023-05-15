@@ -1,6 +1,6 @@
+import Adafruit_DHT
 import os
 import requests
-import Adafruit_DHT
 from dotenv import load_dotenv
 
 sensor = Adafruit_DHT.AM2302
@@ -22,7 +22,8 @@ humidity, temperature = Adafruit_DHT.read_retry(sensor, pin_dht)
 
 if humidity is not None and temperature is not None:
     print(f"Temperature: {temperature:.1f}℃, Humidity: {humidity:.1f}%")
-    push_metric("temperature", temperature, {"instance": instance})
-    push_metric("humidity", humidity, {"instance": instance})
+    if 10 < humidity < 100 and 20 < temperature < 100:
+        push_metric("temperature", temperature, {"instance": instance})
+        push_metric("humidity", humidity, {"instance": instance})
 else:
     print("Temperature/Humidity failed")
